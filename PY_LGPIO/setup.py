@@ -9,7 +9,7 @@ from setuptools import setup, Extension
 with open('README.md') as f:
     long_description = f.read()
 
-lgpio_module = Extension('_lgpio', sources=['lgpio_wrap.c',], libraries=['lgpio',],)
+lgpio_module = Extension('_lgpio', sources=['lgpio_wrap.c',], libraries=['lgpio',], extra_compile_args=['-I../'])
 
 setup (name = 'lgpio',
        version = '0.2.2.0',
