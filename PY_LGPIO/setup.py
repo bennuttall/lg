@@ -5,11 +5,16 @@ setup.py file for SWIG lgpio
 """
 
 from setuptools import setup, Extension
+import glob
 
 with open('README.md') as f:
     long_description = f.read()
 
-lgpio_module = Extension('_lgpio', sources=['lgpio_wrap.c',], libraries=['lgpio',],)
+sources = glob.glob("../lg*.c")
+sources.append('../rgpiod.c')
+sources.append('lgpio_wrap.c')
+
+lgpio_module = Extension('_lgpio', sources=sources, libraries=['rt', 'dl'], extra_compile_args=['-I../', '-pthread'])
 
 setup (name = 'lgpio',
        version = '0.2.2.0',
