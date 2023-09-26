@@ -12,7 +12,8 @@ with open('README.md') as f:
 
 sources = glob.glob("../lg*.c")
 sources.append('../rgpiod.c')
-sources.append('lgpio_wrap.c')
+sources.append('lgpio.i')
+
 
 lgpio_module = Extension('_lgpio', sources=sources, libraries=['rt', 'dl'], extra_compile_args=['-I../', '-pthread'])
 
