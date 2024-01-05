@@ -71,7 +71,7 @@ sudo apt install python-setuptools python3-setuptools
 ### Download & Install
 
 ```
-wget https://github.com/joan2937/lg/archive/master.zip
+wget https://github.com/gpiozero/lg/archive/master.zip
 unzip master.zip
 cd lg-master
 make
